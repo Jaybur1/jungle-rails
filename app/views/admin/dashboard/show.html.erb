@@ -1,2 +1,7 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Jungle overall summary
+  </a>
+  <%= link_to "Product count : #{@product_count}","admin/products" , class: "list-group-item list-group-item-action"%>
+  <%= link_to "Category count : #{@category_count}","admin/categories" , class: "list-group-item list-group-item-action"%>
+</div>
