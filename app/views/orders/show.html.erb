@@ -5,7 +5,23 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order!</h4>
+    <h4>Thank you for your order! <%= @order.email %></h4>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Quantity</th>
+          <th>Price per unit</th>
+          <th>Price for quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order_products.each_with_index do |product, index|%>
+          <%= render 'line_item', product:product , quantity: @line_items[index].quantity%>
+        <% end %>
+      </tbody>
+    </table>
+    <p>Total transaction: <%= humanized_money_with_symbol  @order.total_cents / 100.0 %></p>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
