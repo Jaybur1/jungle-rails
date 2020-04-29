@@ -62,6 +62,4 @@ class OrdersController < ApplicationController
     items.map{|item| Product.find_by(id: item[:product_id])}
   end
 
-  def total(items)
-  end
 end
