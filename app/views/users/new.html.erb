@@ -1,0 +1,23 @@
+<div class="form container justify-content-center">
+  <h1>Sign Up</h1>
+  <hr/>
+<%= form_for :user, url: '/users'  do |f| %>
+  <div class="field">
+    <%= f.text_field :first_name , placeholder: "First Name"%>
+  </div>
+    <div class="field">
+    <%= f.text_field :last_name , placeholder: "Last Name"%>
+  </div>
+  <div class="field">
+    <%= f.text_field :email , placeholder: "Email"%>
+  </div>
+  <div class="field">
+    <%= f.password_field :password , placeholder: "Password"%>
+  </div>
+  <div class="field">
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password"%>
+  </div>
+  <div class="actions"><%= f.submit "Sign Up" %></div>
+ </div>
+<% end %>
+<div>
