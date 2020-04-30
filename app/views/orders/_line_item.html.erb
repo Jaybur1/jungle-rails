@@ -11,8 +11,18 @@
   <%= quantity %>
   </td>
   <td>
+  <% if active_sale %> 
+    <% sale_off = (active_sale.percent_off / 100.0)%>
+   <del><%= humanized_money_with_symbol product.price %></del> <%= humanized_money_with_symbol product.price - (product.price * sale_off) %>
+    <% else %>
     <%= humanized_money_with_symbol product.price %>
+    <% end %>
   </td>
   <td>
-    <%= humanized_money_with_symbol product.price * quantity %>
+   <% if active_sale %> 
+    <% sale_off = (active_sale.percent_off / 100.0)%>
+   <del><%= humanized_money_with_symbol product.price %></del> <%= humanized_money_with_symbol product.price - (product.price * sale_off) *quantity%>
+    <% else %>
+    <%= humanized_money_with_symbol product.price * quantity%>
+    <% end %>
   </td></tr>

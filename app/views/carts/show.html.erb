@@ -30,14 +30,7 @@
             TOTAL:
           </th>
           <th>
-            <% if active_sale %>
-              <% cart_total = cart_subtotal_cents / 100.0%>
-              <% sale_off = (active_sale.percent_off / 100.0)%>
-              <% total_with_sale = (cart_total - (cart_total * sale_off)).round(2) %>
-               <del> <%= humanized_money_with_symbol cart_total %>  </del><%= humanized_money_with_symbol total_with_sale %>
-            <% else %>
-            <%= humanized_money_with_symbol cart_total %>
-            <% end %>
+            <%= humanized_money_with_symbol cart_subtotal_cents / 100.0 %>
           </th>
         </tr>
       </tfoot>
