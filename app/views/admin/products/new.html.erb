@@ -52,7 +52,7 @@
 
         <div class="form-group">
           <%= form.label :image %>
-          <%= cl_image_upload_tag(:image,:tags => "directly_uploaded",:crop => :limit, :width => 1000, :height => 1000,:eager => [{ :crop => :fill, :width => 150, :height => 100 }]) %>
+          <%= form.file_field :image %>
         </div>
 
         <%= form.submit 'Create Product', class: 'btn btn-primary' %>
