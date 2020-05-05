@@ -52,7 +52,8 @@
 
         <div class="form-group">
           <%= form.label :image %>
-          <%= form.file_field :image %>
+          <%= javascript_include_tag("jquery.ui.widget", "jquery.iframe-transport", 
+        "jquery.fileupload", "jquery.cloudinary") %>
         </div>
 
         <%= form.submit 'Create Product', class: 'btn btn-primary' %>
