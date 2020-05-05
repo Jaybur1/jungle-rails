@@ -52,8 +52,7 @@
 
         <div class="form-group">
           <%= form.label :image %>
-          <%= javascript_include_tag("jquery.ui.widget", "jquery.iframe-transport", 
-        "jquery.fileupload", "jquery.cloudinary") %>
+          <%= cl_image_upload_tag(:image,:tags => "directly_uploaded",:crop => :limit, :width => 1000, :height => 1000,:eager => [{ :crop => :fill, :width => 150, :height => 100 }]) %>
         </div>
 
         <%= form.submit 'Create Product', class: 'btn btn-primary' %>
